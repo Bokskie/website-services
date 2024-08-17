@@ -1,0 +1,114 @@
+.services-process-section
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 0;
+    overflow: hidden;
+}
+.services-process-margin-section
+{
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+.services-process-container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+}
+.service-process-header-name
+{
+    font-size: var(--fs-large);
+    font-weight: 900;
+    padding: 20px 0;
+}
+.services-logo-header-name
+{
+    display: flex;
+    align-items: center;
+    font-size: var(--fs-medium);
+    font-weight: 550;
+    padding: 10px 0;
+}
+.services-logo-header-name i 
+{
+    color: var(--highlight-bg-color);
+    font-size: var(--fs-large);
+    font-weight: 900;
+}
+.services-process-paragraph
+{
+    font-size: var(--fs-small);
+}
+
+/*----------animation effects-------------*/
+.services-selling-process-container li,
+.services-buying-process-container li 
+{
+    opacity: 0;
+    transform: translateX(-100px); 
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.services-buying-process-container li 
+{
+    transform: translateX(100px); 
+}
+
+.services-selling-process-container li.visible 
+{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.services-buying-process-container li.visible 
+{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+/*----Laptop Devices Responsive-----*/
+@media (min-width: 769px) and (max-width: 1024px) {
+    .services-process-margin-section
+    {
+        max-width: 900px;
+        width: 80%;
+    }
+    .services-process-container
+    {
+        grid-template-columns: 1fr;
+    }
+    
+}
+    
+
+/*----Mobile Devices Responsive-----*/
+@media only screen and (max-width: 768px) {
+    .services-process-margin-section
+    {
+        width: 80%;
+    }
+    .services-process-container
+    {
+        grid-template-columns: 1fr;
+    }
+    .services-logo-header-name
+    {
+        align-items: start;
+        font-size: var(--fs-small);
+        display: flex;
+    }
+    .services-logo-header-name i 
+    {
+        padding: 0 4px;
+        font-size: var(--fs-medium);
+        align-items: center;
+    }
+    
+}

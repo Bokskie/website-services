@@ -1,0 +1,235 @@
+.header
+{
+    background-color: var(--header-primary-color);
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    height: 80px; 
+    z-index: 100;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.header-margin-section
+{
+    margin: auto;
+    width: 100%
+}
+.header-container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+.header-logo
+{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    cursor: pointer;
+}
+.header-logo img 
+{
+    width: 40px;
+    height: 40px;
+}
+.header-navigation ul 
+{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    padding: 0;
+    margin: 0;
+}
+.header-navigation ul li 
+{
+    margin: 0;
+}
+.header-navigation ul li a 
+{
+    display: flex; 
+    align-items: center;
+    padding: 10px 20px; 
+    font-size: var(--fs-small);
+    color: var(--text-color); 
+    font-weight: 900;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+.header-navigation ul li a:hover 
+{
+    border-bottom: 2px solid var(--secondary-bg);
+    transform: scale(1.1);
+}
+/*--------------header bottom---------------*/
+.header-bottom-container
+{
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    z-index: 90;
+    padding: 10px;
+    height: 60px;
+    background-color: var(--header-secondary-color);
+    box-sizing: border-box;
+}
+.header-searchbar
+{
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+.header-searchbar input 
+{
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--text-color);
+    box-sizing: border-box;
+}
+.header-searchbar input::placeholder
+{
+    color: var(--black-text-color);
+}
+.hamburger-menu 
+{
+    display: none;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101;
+    color: var(--text-color);
+    font-size: var(--fs-xl);
+}
+.icon-close 
+{
+    display: none;
+    font-size: var(--fs-xl);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+/*----------------header is hidden----------------*/
+.header,
+.header-bottom-container 
+{
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/*----------------header is shown-----------------*/
+.header.visible,
+.header-bottom-container.visible 
+{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*----Laptop Devices Responsive----*/
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .header-navigation 
+    {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: var(--header-primary-color);
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 10px 0;
+    }
+    .header-navigation.active 
+    {
+        display: flex;
+    }
+    .header-navigation ul 
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .header-navigation ul li a 
+    {
+        font-size: var(--fs-large);
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+    }
+    .hamburger-menu
+    {
+        display: block;
+        font-size: var(--fs-xl);
+    }
+    .icon-close 
+    {
+        font-size: var(--fs-xl);
+    }
+}
+
+
+/*----Mobile Devices Responsive-----*/
+@media only screen and (max-width: 768px) {
+
+    .header-margin-section
+    {
+        margin: auto;
+        width: 80%;
+    }
+    .header-navigation 
+    {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: var(--header-primary-color);
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 10px0;
+    }
+    .header-navigation.active
+    {
+        display: flex;
+    }
+    .header-navigation ul 
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .header-navigation ul li a 
+    {
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+    }
+    .header-navigation.active 
+    {
+        display: flex;
+    }
+    .hamburger-menu 
+    {
+        display: block;
+        font-size: var(--fs-large);
+    }
+    .icon-close 
+    {
+        font-size: var(--fs-large);
+    }
+}

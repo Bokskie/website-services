@@ -1,0 +1,220 @@
+.services-about-section
+{
+    background-color: #ffffff;
+    padding: 30px 0;
+    overflow: hidden;
+}
+.services-about-margin-section
+{
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+.services-about-container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    padding: 30px 0;
+}
+.services-about-content
+{
+    position: relative;
+    display: inline-block;
+    border: 3px solid var(--highlight-bg-color);
+    width: 380px;
+    height: 440px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.services-about-image, .services-about-text
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.services-about-image img 
+{
+    width: 374px;
+    height: 434px;
+}
+.services-about-text
+{
+    background-color: var(--secondary-img-blurry);
+    display: none;
+    transform: translateX(-100%);
+    color: var(--text-color);
+    padding: 20px; 
+    border-radius: 5px;
+}
+.services-about-header-name
+{
+    color: var(--text-color);
+    font-size: var(--fs-large);
+    font-weight: 650;
+    padding: 20px 0;
+}
+.services-about-paragraph
+{
+    font-size: var(--fs-small);
+    color: var(--text-color);
+}
+.services-about-content:hover .services-about-text
+{
+    display: block;
+    width: 374px;
+    height: 434px;
+    animation: slide-in 0.5s ease-out;
+    animation-fill-mode: forwards;
+}
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.hidden
+{
+    display: none;
+}
+.services-about-toggle-button
+{
+    margin-top: 10px; 
+    padding: 10px 20px; 
+    border: none;
+    background-color: var(--highlight-bg-color); 
+    color:  var(--text-color);
+    cursor: pointer;
+    border-radius: 5px; 
+    font-size: var(--fs-small);
+}
+.services-about-toggle-button:hover
+{
+    box-shadow: 0 0 25px var(--highlight-bg-color);
+}
+.services-about-footer
+{
+    width: 800px;
+    margin: auto;
+    padding: 30px 30px;
+}
+.services-about-footer-paragraph
+{
+    font-weight: 300;
+}
+
+/*-----------invisible---------------*/
+.services-about-content,
+.services-about-image,
+.services-about-footer {
+    opacity: 0;
+    transform: translateY(-120px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/*------------floating show--------------*/
+.services-about-content.visible,
+.services-about-image.visible,
+.services-about-footer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/*----Laptop Devices Responsive-----*/
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .services-about-margin-section
+    {
+        width: 80%;
+    }
+    .services-about-container
+    {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    .services-about-content
+    {
+        width: 500px;
+        height: 440px;
+    }
+    .services-about-image img 
+    {
+        width: 494px;
+        height: 436px;
+    }
+    .services-about-content:hover .services-about-text
+    {
+        display: block;
+        width: 494px;
+        height: 436px;
+        animation: slide-in 0.5s ease-out;
+        animation-fill-mode: forwards;
+    }
+    .services-about-footer
+    {
+        width: 80%;
+    }
+}
+    
+
+/*----Mobile Devices Responsive-----*/
+@media only screen and (max-width: 768px) {
+    .services-about-margin-section
+    {
+        width: 80%;
+    }
+    .services-about-container
+    {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    .services-about-footer
+    {
+        width: 80%;
+    }
+    .services-about-content
+    {
+        width: 260px;
+        height: 440px;
+    }
+    .services-about-header-name
+    {
+        font-size: var(--fs-small);
+    }
+    .services-about-paragraph
+    {
+        font-size: 12px;
+    }
+    .services-about-image img 
+    {
+        width: 254px;
+        height: 436px;
+    }
+    .services-about-content:hover .services-about-text
+    {
+        width: 254px;
+        height: 436px;
+    }
+    .services-about-footer
+    {
+        margin: auto;
+        padding: 0 0;
+    }
+    .services-about-footer
+    {
+        width: 80%;
+    }
+    .services-about-footer-paragraph
+    {
+        font-size: var(--fs-small);
+    }
+}

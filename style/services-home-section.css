@@ -1,0 +1,105 @@
+.services-home-section
+{
+    position: relative;
+    height: 100vh;
+    background-image: url('../images/services.jfif');
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+}
+.services-home-blurry-background
+{
+    background-color: var(--img-blurry);  
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 6rem 0;
+}
+.services-home-container
+{   
+    width: 500px;
+    margin: auto;
+    padding: 20px; 
+    display: flex;
+    flex-direction: column; 
+    gap: 2rem;
+    align-items: center;
+}
+.services-header-name
+{
+    font-size: var(--fs-xl);
+    font-weight: 900;
+    color: var(--text-color);
+}
+.services-home-paragraph
+{
+    font-size: var(--fs-medium);
+    color: var(--text-color);
+}
+.services-home-buttons
+{
+    width: fit-content;
+    padding: 20px 40px;
+    border-radius: 3rem;
+    box-shadow: 0 0 15px var(--highlight-bg-color);
+    transition: all ease 0.5s;
+    cursor: pointer;
+    animation-name: home-button;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+} 
+@keyframes home-button
+{
+    from {top: 0px;}
+    to {top: 200px; background-color: var(--highlight-bg-color);}
+}
+.services-home-buttons a
+{
+    color: var(--text-color);
+}
+.services-home-buttons:hover 
+{
+    transform: scale(1.05);
+    box-shadow: 0 0 125px var(--highlight-bg-color);
+}
+
+
+
+/*----Laptop Devices Responsive-----*/
+@media (min-width: 769px) and (max-width: 1024px) {
+
+
+    .services-home-container
+    {   
+        width: 80%;
+    }
+}
+    
+
+/*----Mobile Devices Responsive-----*/
+@media only screen and (max-width: 768px) {
+ 
+
+    .services-home-container
+    {   
+        width: 80%;
+    }
+    .services-home-buttons
+    {
+        padding: 10px 30px;
+    } 
+    .services-header-name
+    {
+        font-size: var(--fs-large);
+    }
+    .services-home-paragraph
+    {
+        font-size: var(--fs-small);
+    }
+    .services-home-buttons
+    {
+        padding: 10px 20px;
+
+    } 
+}

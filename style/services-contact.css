@@ -1,0 +1,237 @@
+.services-contact-section 
+{
+    background-image: url('../images/work-with-us');
+    background-position: center;
+    background-size: cover;
+    height: auto;
+    overflow: hidden;
+}
+.services-contact-margin-section 
+{
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+.services-background-blurry 
+{
+    background-color: var(--img-blurry);
+}
+.services-contact-container 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    padding: 4rem 0;
+}
+.services-contact-text-content 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.services-contact-text-header 
+{
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--contact-text-color);
+}
+.services-contact-text-paragraph 
+{
+    padding: 20px 0;
+    font-size: var(--fs-medium);
+    color: var(--contact-text-color);
+}
+.form-header-name 
+{
+    font-size: var(--fs-xl);
+    font-weight: 600;
+    color: var(--text-color);
+    text-align: center;
+    padding: 30px 0;
+}
+.form 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    border-radius: 10px;
+}
+.contact_input,
+.contact_message-textarea 
+{
+    margin: auto;
+}
+
+form input,
+form textarea 
+{
+    border: 2px solid var(--highlight-bg-color);
+    border-radius: 10px;
+    background-color: var(--secondary-bg);
+    padding: 14px;
+    color: var(--contact-text-color);
+    transition: all 0.3s ease;
+}
+
+form input 
+{
+    width: 300px;
+}
+
+form textarea 
+{
+    width: 360px;
+}
+
+input::placeholder,
+textarea::placeholder 
+{
+    color: var(--text-color);
+}
+
+.submitBtn 
+{
+    width: fit-content;
+    padding: 20px 40px;
+    background-color: var(--highlight-bg-color);
+    cursor: pointer;
+    font-size: var(--fs-small);
+    font-weight: 650;
+    border-radius: 2rem;
+    border: none;
+    box-shadow: 0 0 15px var(--highlight-bg-color);
+    transition: all 0.3s ease;
+}
+
+.submitBtn:hover 
+{
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--highlight-bg-color);
+}
+
+/*--------animation style--------------*/
+.visible 
+{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*-----Initial state for animation-----*/
+.services-contact-text-header,
+.services-contact-text-paragraph,
+.form-header-name,
+form input,
+form textarea,
+.submitBtn 
+{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+/*----Animations for text header and paragraph------*/
+.services-contact-text-header.visible,
+.services-contact-text-paragraph.visible 
+{
+    opacity: 1;
+    transform: translateY(0);
+}
+/*---Animations for form header-----*/
+.form-header-name.visible 
+{
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.2s;
+}
+/*----Animations for inputs and textarea---*/
+form input.visible,
+form textarea.visible 
+{
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+}
+
+/*------Animation for submit button----*/
+.submitBtn.visible 
+{
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, background-color 0.6s ease-out;
+}
+
+.submitBtn:hover 
+{
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse 
+{
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/*----------Laptop Responsive------------*/
+@media (min-width: 769px) and (max-width: 1024px) {
+    .services-contact-margin-sectio
+    {
+        width: 80%;
+    }
+    .services-contact-container 
+    {
+        grid-template-columns: 1fr;
+    }
+    form input 
+    {
+        width: 100%;
+    }
+    form textarea 
+    {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+/*-----------Mobile Responsive----------*/
+@media only screen and (max-width: 768px) {
+    .services-contact-section 
+    {
+        height: auto;
+    }
+    .services-contact-margin-section 
+    {
+        width: 80%;
+    }
+    .services-contact-container 
+    {
+        grid-template-columns: 1fr;
+    }
+    .services-contact-header-name 
+    {
+        font-size: var(--fs-large);
+        padding-bottom: 1rem;
+    }
+    .form 
+    {
+        grid-template-columns: 1fr;
+        padding-top: 2rem;
+    }
+    form input,
+    form textarea 
+    {
+        width: 300px;
+        margin: 0 auto;
+    }
+    .submitBtn 
+    {
+        width: 100%;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,266 @@
+.services-luxury-section 
+{
+    position: relative;
+    padding: 30px 0;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+.services-luxury-margin-section 
+{
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+.services-luxury-container 
+{
+    position: relative;
+}
+.services-luxury-slider 
+{
+    position: relative;
+    overflow: hidden;
+}
+.services-luxury-contents 
+{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+.services-luxury-content 
+{
+    flex: 0 0 100%;
+    box-sizing: border-box;
+}
+.services-luxury-image
+{
+    width: 80%;
+    margin: auto;
+}
+.services-luxury-image img 
+{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    margin: auto;
+}
+.services-luxury-content-images 
+{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+.services-luxury-content-images img 
+{
+    width: 280px;
+    height: 100px;
+  
+}
+.services-luxury-paragraph 
+{
+    padding: 20px 0;
+    text-align: center;
+}
+.arrow 
+{
+    position: absolute;
+    top: 36%;
+    transform: translateY(-50%);
+    background-color: var(--highlight-bg-color);
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    z-index: 10;
+}
+.arrow:hover 
+{
+    box-shadow: 0 0 25px var(--highlight-bg-color);
+}
+.arrow-left 
+{
+    left: 2px;
+}
+.arrow-right 
+{
+    right: 2px;
+}
+
+/*------------services luxury footer----------------*/
+.services-luxury-footer
+{
+    padding: 30px 0;
+}
+.services-luxury-footer-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+}
+.services-luxury-footer-content
+{
+    font-weight: 670;
+}
+.services-luxury-footer-image 
+{
+    padding: 20px 0 ;
+}
+.services-luxury-footer-image  img 
+{
+    max-width: 600px;
+    width: 100%;
+    height: 600px;
+}
+.services-luxury-footer-boxs 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+}
+.services-luxury-footer-box
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.services-luxury-footer-box-image i
+{
+    color: var(--highlight-bg-color);
+    font-size: var(--fs-xl);
+}
+.services-luxury-footer-box-header 
+{
+    font-size: var(--fs-medium);
+    font-weight: 650;
+}
+.services-luxury-footer-box-paragraph 
+{
+    font-size: var(--fs-small);
+}
+
+/*--------animation effects----------*/
+.services-luxury-content-images,
+.services-luxury-paragraph {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/*---------Animation triggers--------*/
+.services-luxury-content-images.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.services-luxury-paragraph.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.services-luxury-footer-content,
+.services-luxury-footer-box {
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.services-luxury-footer-content.visible,
+.services-luxury-footer-box.visible {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+/*----------Specific animations--------*/
+.services-luxury-content-images {
+    transform: translateX(-130px); 
+}
+
+.services-luxury-paragraph {
+    transform: translateX(130px); 
+}
+
+.services-luxury-footer-content {
+    transition-delay: 0.3s; 
+}
+
+.services-luxury-footer-box {
+    transition-delay: 0.5s;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .services-luxury-section 
+    {
+        height: auto;
+    }
+    .services-luxury-margin-section 
+    {
+        width: 80%;
+    }
+    .services-luxury-content-images img 
+    {
+        width: 180px;
+    }
+    .services-luxury-footer-boxs 
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+    .arrow-left 
+    {
+        left: 2px;
+    }
+    .arrow-right 
+    {
+        right: 2px;
+    }
+        
+}
+    
+
+/*----Mobile Devices Responsive-----*/
+@media only screen and (max-width: 768px) {
+
+    .services-luxury-section 
+    {
+        height: auto;
+    }
+    .services-luxury-margin-section 
+    {
+        width: 80%;
+    }
+    .services-luxury-content-images
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+    .services-luxury-content-images img 
+    {
+        width: 240px;
+    }
+    .services-luxury-footer-boxs 
+    {
+        grid-template-columns: 1fr;
+    }
+    .services-luxury-image
+    {
+        width: 240px;
+        margin: auto;
+    }
+    .services-luxury-image img 
+    {
+        height: 300px;
+    }
+    .services-luxury-footer-box-image i 
+    {
+        font-size: var(--fs-large)
+    }
+    .arrow 
+    {
+        top: 14%;
+        padding: 4px 8px;
+    }
+    .arrow:hover 
+    {
+        box-shadow: 0 0 25px var(--highlight-bg-color);
+    }
+}
